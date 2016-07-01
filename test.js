@@ -1,16 +1,12 @@
-function deleteNth(arr, x) {
-  var res = []
-  var map = {}
-  
-  for (var i = 0; i < arr.length; i++) {
-    var n = arr[i]
-    var c = map[n] = (map[n] || 0) + 1
-    if (c <= x) res.push(n)
-  }
-  console.log(res);
-  return res
+function autocomplete(input, dictionary){
+  return dictionary.filter(function(item) {
+  	// console.log(item.toLowerCase().match("^[a-zA-Z0-9]*$"));
+  	if (item.toLowerCase().match("^[a-zA-Z0-9]*$")) {
+  		// console.log('=======');
+  		return item.toLowerCase().indexOf(input.toLowerCase()) > -1;
+  	}
+  	return false;
+  }) 
 }
 
-deleteNth ([1,1,1,1],2);
-// deleteNth ([20,37,20,21],1)
-// deleteNth([1,1,3,3,7,2,2,2,2], 3)
+console.log(autocomplete('a', ['airplane','airport','Apple','ball']));
