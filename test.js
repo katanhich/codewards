@@ -1,12 +1,7 @@
-function autocomplete(input, dictionary){
-  return dictionary.filter(function(item) {
-  	// console.log(item.toLowerCase().match("^[a-zA-Z0-9]*$"));
-  	if (item.toLowerCase().match("^[a-zA-Z0-9]*$")) {
-  		// console.log('=======');
-  		return item.toLowerCase().indexOf(input.toLowerCase()) > -1;
-  	}
-  	return false;
-  }) 
-}
+var Test = require('./framework').Test;
 
-console.log(autocomplete('a', ['airplane','airport','Apple','ball']));
+
+var s = 'Hi everybody!';
+var y = s.split([' ', '!']);
+
+console.log(y)
